@@ -1,0 +1,53 @@
+package configuration for libffi
+cflags: -I/opt/local/lib/libffi-3.0.10/include  
+ldflags: -L/opt/local/lib
+libs: -lffi  
+
+have_header: checking for ffi.h... -------------------- yes
+
+"gcc -E -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/fiddle -I'/Users/tim/.rbenv/versions/1.9.3-probes/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-probes/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe -I/opt/local/lib/libffi-3.0.10/include    conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <ffi.h>
+/* end */
+
+--------------------
+
+have_library: checking for main() in -lffi... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/fiddle -I'/Users/tim/.rbenv/versions/1.9.3-probes/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-probes/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe -I/opt/local/lib/libffi-3.0.10/include   conftest.c  -L. -L../.. -L. -L'/Users/tim/.rbenv/versions/1.9.3-probes/lib'  -L/usr/local/lib -L/opt/local/lib     -lffi   -lruby-static -lffi  -lffi   -lpthread -ldl -lobjc "
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: extern int t(void);
+6: int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+/* end */
+
+--------------------
+
+have_header: checking for sys/mman.h... -------------------- yes
+
+"gcc -E -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/fiddle -I'/Users/tim/.rbenv/versions/1.9.3-probes/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-probes/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe -I/opt/local/lib/libffi-3.0.10/include    conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <sys/mman.h>
+/* end */
+
+--------------------
+
+extconf.h is:
+/* begin */
+1: #ifndef EXTCONF_H
+2: #define EXTCONF_H
+3: #define HAVE_FFI_H 1
+4: #define HAVE_SYS_MMAN_H 1
+5: #endif
+/* end */
+

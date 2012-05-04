@@ -1,0 +1,4 @@
+./.ext/x86_64-darwin11.3.0/digest/sha1.bundle:
+	/usr/lib/libcrypto.0.9.8.dylib (compatibility version 0.9.8, current version 44.0.0)
+	/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 159.1.0)
+	/usr/lib/libobjc.A.dylib (compatibility version 1.0.0, current version 228.0.0)

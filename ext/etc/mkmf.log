@@ -1,0 +1,300 @@
+have_library: checking for getpwnam() in -lsun... -------------------- no
+
+"gcc -o conftest -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/etc -I'/Users/tim/.rbenv/versions/1.9.3-probes/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-probes/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe conftest.c  -L. -L../.. -L. -L'/Users/tim/.rbenv/versions/1.9.3-probes/lib'  -L/usr/local/lib     -lruby-static -lsun  -lpthread -ldl -lobjc "
+conftest.c: In function ‘t’:
+conftest.c:6: error: ‘getpwnam’ undeclared (first use in this function)
+conftest.c:6: error: (Each undeclared identifier is reported only once
+conftest.c:6: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: extern int t(void);
+6: int t(void) { void ((*volatile p)()); p = (void ((*)()))getpwnam; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/etc -I'/Users/tim/.rbenv/versions/1.9.3-probes/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-probes/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe conftest.c  -L. -L../.. -L. -L'/Users/tim/.rbenv/versions/1.9.3-probes/lib'  -L/usr/local/lib     -lruby-static -lsun  -lpthread -ldl -lobjc "
+conftest.c: In function ‘t’:
+conftest.c:6: warning: implicit declaration of function ‘getpwnam’
+ld: library not found for -lsun
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: extern int t(void);
+6: int t(void) { getpwnam(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for getlogin()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/etc -I'/Users/tim/.rbenv/versions/1.9.3-probes/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-probes/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe conftest.c  -L. -L../.. -L. -L'/Users/tim/.rbenv/versions/1.9.3-probes/lib'  -L/usr/local/lib     -lruby-static  -lpthread -ldl -lobjc "
+conftest.c: In function ‘t’:
+conftest.c:6: error: ‘getlogin’ undeclared (first use in this function)
+conftest.c:6: error: (Each undeclared identifier is reported only once
+conftest.c:6: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: extern int t(void);
+6: int t(void) { void ((*volatile p)()); p = (void ((*)()))getlogin; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/etc -I'/Users/tim/.rbenv/versions/1.9.3-probes/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-probes/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe conftest.c  -L. -L../.. -L. -L'/Users/tim/.rbenv/versions/1.9.3-probes/lib'  -L/usr/local/lib     -lruby-static  -lpthread -ldl -lobjc "
+conftest.c: In function ‘t’:
+conftest.c:6: warning: implicit declaration of function ‘getlogin’
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: extern int t(void);
+6: int t(void) { getlogin(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for getpwent()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/etc -I'/Users/tim/.rbenv/versions/1.9.3-probes/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-probes/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe conftest.c  -L. -L../.. -L. -L'/Users/tim/.rbenv/versions/1.9.3-probes/lib'  -L/usr/local/lib     -lruby-static  -lpthread -ldl -lobjc "
+conftest.c: In function ‘t’:
+conftest.c:6: error: ‘getpwent’ undeclared (first use in this function)
+conftest.c:6: error: (Each undeclared identifier is reported only once
+conftest.c:6: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: extern int t(void);
+6: int t(void) { void ((*volatile p)()); p = (void ((*)()))getpwent; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/etc -I'/Users/tim/.rbenv/versions/1.9.3-probes/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-probes/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe conftest.c  -L. -L../.. -L. -L'/Users/tim/.rbenv/versions/1.9.3-probes/lib'  -L/usr/local/lib     -lruby-static  -lpthread -ldl -lobjc "
+conftest.c: In function ‘t’:
+conftest.c:6: warning: implicit declaration of function ‘getpwent’
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: extern int t(void);
+6: int t(void) { getpwent(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for getgrent()... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/etc -I'/Users/tim/.rbenv/versions/1.9.3-probes/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-probes/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe conftest.c  -L. -L../.. -L. -L'/Users/tim/.rbenv/versions/1.9.3-probes/lib'  -L/usr/local/lib     -lruby-static  -lpthread -ldl -lobjc "
+conftest.c: In function ‘t’:
+conftest.c:6: error: ‘getgrent’ undeclared (first use in this function)
+conftest.c:6: error: (Each undeclared identifier is reported only once
+conftest.c:6: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: extern int t(void);
+6: int t(void) { void ((*volatile p)()); p = (void ((*)()))getgrent; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/etc -I'/Users/tim/.rbenv/versions/1.9.3-probes/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-probes/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe conftest.c  -L. -L../.. -L. -L'/Users/tim/.rbenv/versions/1.9.3-probes/lib'  -L/usr/local/lib     -lruby-static  -lpthread -ldl -lobjc "
+conftest.c: In function ‘t’:
+conftest.c:6: warning: implicit declaration of function ‘getgrent’
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: extern int t(void);
+6: int t(void) { getgrent(); return 0; }
+/* end */
+
+--------------------
+
+have_struct_member: checking for struct passwd.pw_gecos in pwd.h... -------------------- yes
+
+"gcc -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/etc -I'/Users/tim/.rbenv/versions/1.9.3-probes/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-probes/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe   -c conftest.c"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <pwd.h>
+4: 
+5: /*top*/
+6: int main() {return 0;}
+7: int s = (char *)&((struct passwd*)0)->pw_gecos - (char *)0;
+/* end */
+
+--------------------
+
+have_struct_member: checking for struct passwd.pw_change in pwd.h... -------------------- yes
+
+"gcc -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/etc -I'/Users/tim/.rbenv/versions/1.9.3-probes/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-probes/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe   -c conftest.c"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <pwd.h>
+4: 
+5: /*top*/
+6: int main() {return 0;}
+7: int s = (char *)&((struct passwd*)0)->pw_change - (char *)0;
+/* end */
+
+--------------------
+
+have_struct_member: checking for struct passwd.pw_quota in pwd.h... -------------------- no
+
+"gcc -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/etc -I'/Users/tim/.rbenv/versions/1.9.3-probes/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-probes/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe   -c conftest.c"
+conftest.c:7: error: ‘struct passwd’ has no member named ‘pw_quota’
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <pwd.h>
+4: 
+5: /*top*/
+6: int main() {return 0;}
+7: int s = (char *)&((struct passwd*)0)->pw_quota - (char *)0;
+/* end */
+
+--------------------
+
+have_struct_member: checking for struct passwd.pw_age in pwd.h... -------------------- no
+
+"gcc -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/etc -I'/Users/tim/.rbenv/versions/1.9.3-probes/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-probes/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe   -c conftest.c"
+conftest.c:7: error: ‘struct passwd’ has no member named ‘pw_age’
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <pwd.h>
+4: 
+5: /*top*/
+6: int main() {return 0;}
+7: int s = (char *)&((struct passwd*)0)->pw_age - (char *)0;
+/* end */
+
+--------------------
+
+have_struct_member: checking for struct passwd.pw_class in pwd.h... -------------------- yes
+
+"gcc -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/etc -I'/Users/tim/.rbenv/versions/1.9.3-probes/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-probes/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe   -c conftest.c"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <pwd.h>
+4: 
+5: /*top*/
+6: int main() {return 0;}
+7: int s = (char *)&((struct passwd*)0)->pw_class - (char *)0;
+/* end */
+
+--------------------
+
+have_struct_member: checking for struct passwd.pw_comment in pwd.h... -------------------- no
+
+"gcc -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/etc -I'/Users/tim/.rbenv/versions/1.9.3-probes/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-probes/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe   -c conftest.c"
+conftest.c:7: error: ‘struct passwd’ has no member named ‘pw_comment’
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <pwd.h>
+4: 
+5: /*top*/
+6: int main() {return 0;}
+7: int s = (char *)&((struct passwd*)0)->pw_comment - (char *)0;
+/* end */
+
+--------------------
+
+have_struct_member: checking for struct passwd.pw_expire in pwd.h... -------------------- yes
+
+"gcc -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/etc -I'/Users/tim/.rbenv/versions/1.9.3-probes/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-probes/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe   -c conftest.c"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <pwd.h>
+4: 
+5: /*top*/
+6: int main() {return 0;}
+7: int s = (char *)&((struct passwd*)0)->pw_expire - (char *)0;
+/* end */
+
+--------------------
+
+have_struct_member: checking for struct passwd.pw_passwd in pwd.h... -------------------- yes
+
+"gcc -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/etc -I'/Users/tim/.rbenv/versions/1.9.3-probes/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-probes/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe   -c conftest.c"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <pwd.h>
+4: 
+5: /*top*/
+6: int main() {return 0;}
+7: int s = (char *)&((struct passwd*)0)->pw_passwd - (char *)0;
+/* end */
+
+--------------------
+
+have_struct_member: checking for struct group.gr_passwd in grp.h... -------------------- yes
+
+"gcc -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/etc -I'/Users/tim/.rbenv/versions/1.9.3-probes/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-probes/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe   -c conftest.c"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <grp.h>
+4: 
+5: /*top*/
+6: int main() {return 0;}
+7: int s = (char *)&((struct group*)0)->gr_passwd - (char *)0;
+/* end */
+
+--------------------
+
+extconf.h is:
+/* begin */
+ 1: #ifndef EXTCONF_H
+ 2: #define EXTCONF_H
+ 3: #define HAVE_GETLOGIN 1
+ 4: #define HAVE_GETPWENT 1
+ 5: #define HAVE_GETGRENT 1
+ 6: #define SYSCONFDIR "/Users/tim/.rbenv/versions/1.9.3-probes/etc"
+ 7: #define HAVE_STRUCT_PASSWD_PW_GECOS 1
+ 8: #define HAVE_ST_PW_GECOS 1
+ 9: #define HAVE_STRUCT_PASSWD_PW_CHANGE 1
+10: #define HAVE_ST_PW_CHANGE 1
+11: #define HAVE_STRUCT_PASSWD_PW_CLASS 1
+12: #define HAVE_ST_PW_CLASS 1
+13: #define HAVE_STRUCT_PASSWD_PW_EXPIRE 1
+14: #define HAVE_ST_PW_EXPIRE 1
+15: #define HAVE_STRUCT_PASSWD_PW_PASSWD 1
+16: #define HAVE_ST_PW_PASSWD 1
+17: #define HAVE_STRUCT_GROUP_GR_PASSWD 1
+18: #define HAVE_ST_GR_PASSWD 1
+19: #endif
+/* end */
+

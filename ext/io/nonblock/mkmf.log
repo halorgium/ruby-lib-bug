@@ -1,0 +1,41 @@
+have_macro: checking for O_NONBLOCK in fcntl.h... -------------------- yes
+
+"gcc -I../../../.ext/include/x86_64-darwin11.3.0 -I../../.././include -I../../.././ext/io/nonblock -I'/Users/tim/.rbenv/versions/1.9.3-probes/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-probes/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe   -c conftest.c"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <fcntl.h>
+4: /*top*/
+5: #ifndef O_NONBLOCK
+6: # error
+7: >>>>>> O_NONBLOCK undefined <<<<<<
+8: #endif
+/* end */
+
+--------------------
+
+have_macro: checking for F_GETFL in fcntl.h... -------------------- yes
+
+"gcc -I../../../.ext/include/x86_64-darwin11.3.0 -I../../.././include -I../../.././ext/io/nonblock -I'/Users/tim/.rbenv/versions/1.9.3-probes/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-probes/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe   -c conftest.c"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <fcntl.h>
+4: /*top*/
+5: #ifndef F_GETFL
+6: # error
+7: >>>>>> F_GETFL undefined <<<<<<
+8: #endif
+/* end */
+
+--------------------
+
+extconf.h is:
+/* begin */
+1: #ifndef EXTCONF_H
+2: #define EXTCONF_H
+3: #endif
+/* end */
+

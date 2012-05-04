@@ -1,0 +1,3 @@
+export DESTDIR=$HOME/Projects/ruby-lib-bug
+find . -name mkmf.log |xargs -I{} sh -c 'mkdir -p $DESTDIR/$(dirname {}) && cp {} $DESTDIR/{}'
+find . -name '*.bundle' |xargs -I{} -L 1 sh -c 'mkdir -p $DESTDIR/$(dirname {}) && otool -L {} > $DESTDIR/{}'
