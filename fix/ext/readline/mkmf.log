@@ -1,0 +1,941 @@
+have_library: checking for tgetnum() in -lncurses... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/readline -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe conftest.c  -L. -L../.. -L. -L'/Users/tim/.rbenv/versions/1.9.3-libbug/lib'  -L/usr/local/lib     -lruby-static -lncurses  -lpthread -ldl -lobjc "
+conftest.c: In function ‘t’:
+conftest.c:6: error: ‘tgetnum’ undeclared (first use in this function)
+conftest.c:6: error: (Each undeclared identifier is reported only once
+conftest.c:6: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: extern int t(void);
+6: int t(void) { void ((*volatile p)()); p = (void ((*)()))tgetnum; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/readline -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe conftest.c  -L. -L../.. -L. -L'/Users/tim/.rbenv/versions/1.9.3-libbug/lib'  -L/usr/local/lib     -lruby-static -lncurses  -lpthread -ldl -lobjc "
+conftest.c: In function ‘t’:
+conftest.c:6: warning: implicit declaration of function ‘tgetnum’
+ld: warning: directory not found for option '-L/Users/tim/.rbenv/versions/1.9.3-libbug/lib'
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: extern int t(void);
+6: int t(void) { tgetnum(); return 0; }
+/* end */
+
+--------------------
+
+have_header: checking for readline/readline.h... -------------------- yes
+
+"gcc -E -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/readline -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <readline/readline.h>
+/* end */
+
+--------------------
+
+have_header: checking for readline/history.h... -------------------- yes
+
+"gcc -E -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/readline -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <readline/history.h>
+/* end */
+
+--------------------
+
+have_library: checking for readline() in -lreadline... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/readline -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe conftest.c  -L. -L../.. -L. -L'/Users/tim/.rbenv/versions/1.9.3-libbug/lib'  -L/usr/local/lib    -lncurses  -lruby-static -lreadline -lncurses  -lpthread -ldl -lobjc "
+conftest.c: In function ‘t’:
+conftest.c:6: error: ‘readline’ undeclared (first use in this function)
+conftest.c:6: error: (Each undeclared identifier is reported only once
+conftest.c:6: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: extern int t(void);
+6: int t(void) { void ((*volatile p)()); p = (void ((*)()))readline; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/readline -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe conftest.c  -L. -L../.. -L. -L'/Users/tim/.rbenv/versions/1.9.3-libbug/lib'  -L/usr/local/lib    -lncurses  -lruby-static -lreadline -lncurses  -lpthread -ldl -lobjc "
+conftest.c: In function ‘t’:
+conftest.c:6: warning: implicit declaration of function ‘readline’
+ld: warning: directory not found for option '-L/Users/tim/.rbenv/versions/1.9.3-libbug/lib'
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: extern int t(void);
+6: int t(void) { readline(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rl_getc() in stdio.h,readline/readline.h,readline/history.h... -------------------- no
+
+"gcc -o conftest -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/readline -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe conftest.c  -L. -L../.. -L. -L'/Users/tim/.rbenv/versions/1.9.3-libbug/lib'  -L/usr/local/lib    -lreadline -lncurses  -lruby-static -lreadline -lncurses  -lpthread -ldl -lobjc "
+conftest.c: In function ‘t’:
+conftest.c:10: error: ‘rl_getc’ undeclared (first use in this function)
+conftest.c:10: error: (Each undeclared identifier is reported only once
+conftest.c:10: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <stdio.h>
+ 4: #include <readline/readline.h>
+ 5: #include <readline/history.h>
+ 6: 
+ 7: /*top*/
+ 8: int main() {return 0;}
+ 9: extern int t(void);
+10: int t(void) { void ((*volatile p)()); p = (void ((*)()))rl_getc; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/readline -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe conftest.c  -L. -L../.. -L. -L'/Users/tim/.rbenv/versions/1.9.3-libbug/lib'  -L/usr/local/lib    -lreadline -lncurses  -lruby-static -lreadline -lncurses  -lpthread -ldl -lobjc "
+conftest.c: In function ‘t’:
+conftest.c:10: warning: implicit declaration of function ‘rl_getc’
+ld: warning: directory not found for option '-L/Users/tim/.rbenv/versions/1.9.3-libbug/lib'
+Undefined symbols for architecture x86_64:
+  "_rl_getc", referenced from:
+      _t in ccSrNLD1.o
+ld: symbol(s) not found for architecture x86_64
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <stdio.h>
+ 4: #include <readline/readline.h>
+ 5: #include <readline/history.h>
+ 6: 
+ 7: /*top*/
+ 8: int main() {return 0;}
+ 9: extern int t(void);
+10: int t(void) { rl_getc(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rl_getc_function() in stdio.h,readline/readline.h,readline/history.h... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/readline -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe conftest.c  -L. -L../.. -L. -L'/Users/tim/.rbenv/versions/1.9.3-libbug/lib'  -L/usr/local/lib    -lreadline -lncurses  -lruby-static -lreadline -lncurses  -lpthread -ldl -lobjc "
+ld: warning: directory not found for option '-L/Users/tim/.rbenv/versions/1.9.3-libbug/lib'
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <stdio.h>
+ 4: #include <readline/readline.h>
+ 5: #include <readline/history.h>
+ 6: 
+ 7: /*top*/
+ 8: int main() {return 0;}
+ 9: extern int t(void);
+10: int t(void) { void ((*volatile p)()); p = (void ((*)()))rl_getc_function; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rl_filename_completion_function() in stdio.h,readline/readline.h,readline/history.h... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/readline -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe conftest.c  -L. -L../.. -L. -L'/Users/tim/.rbenv/versions/1.9.3-libbug/lib'  -L/usr/local/lib    -lreadline -lncurses  -lruby-static -lreadline -lncurses  -lpthread -ldl -lobjc "
+ld: warning: directory not found for option '-L/Users/tim/.rbenv/versions/1.9.3-libbug/lib'
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <stdio.h>
+ 4: #include <readline/readline.h>
+ 5: #include <readline/history.h>
+ 6: 
+ 7: /*top*/
+ 8: int main() {return 0;}
+ 9: extern int t(void);
+10: int t(void) { void ((*volatile p)()); p = (void ((*)()))rl_filename_completion_function; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rl_username_completion_function() in stdio.h,readline/readline.h,readline/history.h... -------------------- no
+
+"gcc -o conftest -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/readline -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe conftest.c  -L. -L../.. -L. -L'/Users/tim/.rbenv/versions/1.9.3-libbug/lib'  -L/usr/local/lib    -lreadline -lncurses  -lruby-static -lreadline -lncurses  -lpthread -ldl -lobjc "
+conftest.c: In function ‘t’:
+conftest.c:10: error: ‘rl_username_completion_function’ undeclared (first use in this function)
+conftest.c:10: error: (Each undeclared identifier is reported only once
+conftest.c:10: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <stdio.h>
+ 4: #include <readline/readline.h>
+ 5: #include <readline/history.h>
+ 6: 
+ 7: /*top*/
+ 8: int main() {return 0;}
+ 9: extern int t(void);
+10: int t(void) { void ((*volatile p)()); p = (void ((*)()))rl_username_completion_function; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/readline -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe conftest.c  -L. -L../.. -L. -L'/Users/tim/.rbenv/versions/1.9.3-libbug/lib'  -L/usr/local/lib    -lreadline -lncurses  -lruby-static -lreadline -lncurses  -lpthread -ldl -lobjc "
+conftest.c: In function ‘t’:
+conftest.c:10: warning: implicit declaration of function ‘rl_username_completion_function’
+ld: warning: directory not found for option '-L/Users/tim/.rbenv/versions/1.9.3-libbug/lib'
+Undefined symbols for architecture x86_64:
+  "_rl_username_completion_function", referenced from:
+      _t in cccjfo6r.o
+ld: symbol(s) not found for architecture x86_64
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <stdio.h>
+ 4: #include <readline/readline.h>
+ 5: #include <readline/history.h>
+ 6: 
+ 7: /*top*/
+ 8: int main() {return 0;}
+ 9: extern int t(void);
+10: int t(void) { rl_username_completion_function(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rl_completion_matches() in stdio.h,readline/readline.h,readline/history.h... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/readline -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe conftest.c  -L. -L../.. -L. -L'/Users/tim/.rbenv/versions/1.9.3-libbug/lib'  -L/usr/local/lib    -lreadline -lncurses  -lruby-static -lreadline -lncurses  -lpthread -ldl -lobjc "
+ld: warning: directory not found for option '-L/Users/tim/.rbenv/versions/1.9.3-libbug/lib'
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <stdio.h>
+ 4: #include <readline/readline.h>
+ 5: #include <readline/history.h>
+ 6: 
+ 7: /*top*/
+ 8: int main() {return 0;}
+ 9: extern int t(void);
+10: int t(void) { void ((*volatile p)()); p = (void ((*)()))rl_completion_matches; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rl_refresh_line() in stdio.h,readline/readline.h,readline/history.h... -------------------- no
+
+"gcc -o conftest -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/readline -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe conftest.c  -L. -L../.. -L. -L'/Users/tim/.rbenv/versions/1.9.3-libbug/lib'  -L/usr/local/lib    -lreadline -lncurses  -lruby-static -lreadline -lncurses  -lpthread -ldl -lobjc "
+conftest.c: In function ‘t’:
+conftest.c:10: error: ‘rl_refresh_line’ undeclared (first use in this function)
+conftest.c:10: error: (Each undeclared identifier is reported only once
+conftest.c:10: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <stdio.h>
+ 4: #include <readline/readline.h>
+ 5: #include <readline/history.h>
+ 6: 
+ 7: /*top*/
+ 8: int main() {return 0;}
+ 9: extern int t(void);
+10: int t(void) { void ((*volatile p)()); p = (void ((*)()))rl_refresh_line; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/readline -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe conftest.c  -L. -L../.. -L. -L'/Users/tim/.rbenv/versions/1.9.3-libbug/lib'  -L/usr/local/lib    -lreadline -lncurses  -lruby-static -lreadline -lncurses  -lpthread -ldl -lobjc "
+conftest.c: In function ‘t’:
+conftest.c:10: warning: implicit declaration of function ‘rl_refresh_line’
+ld: warning: directory not found for option '-L/Users/tim/.rbenv/versions/1.9.3-libbug/lib'
+Undefined symbols for architecture x86_64:
+  "_rl_refresh_line", referenced from:
+      _t in ccSG4UjQ.o
+ld: symbol(s) not found for architecture x86_64
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <stdio.h>
+ 4: #include <readline/readline.h>
+ 5: #include <readline/history.h>
+ 6: 
+ 7: /*top*/
+ 8: int main() {return 0;}
+ 9: extern int t(void);
+10: int t(void) { rl_refresh_line(); return 0; }
+/* end */
+
+--------------------
+
+have_var: checking for rl_deprep_term_function in stdio.h,readline/readline.h,readline/history.h... -------------------- yes
+
+"gcc -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/readline -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe   -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <stdio.h>
+ 4: #include <readline/readline.h>
+ 5: #include <readline/history.h>
+ 6: 
+ 7: /*top*/
+ 8: int main() {return 0;}
+ 9: extern int t(void);
+10: int t(void) { const volatile void *volatile p; p = &(&rl_deprep_term_function)[0]; return 0; }
+/* end */
+
+--------------------
+
+have_var: checking for rl_completion_append_character in stdio.h,readline/readline.h,readline/history.h... -------------------- yes
+
+"gcc -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/readline -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe   -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <stdio.h>
+ 4: #include <readline/readline.h>
+ 5: #include <readline/history.h>
+ 6: 
+ 7: /*top*/
+ 8: int main() {return 0;}
+ 9: extern int t(void);
+10: int t(void) { const volatile void *volatile p; p = &(&rl_completion_append_character)[0]; return 0; }
+/* end */
+
+--------------------
+
+have_var: checking for rl_basic_word_break_characters in stdio.h,readline/readline.h,readline/history.h... -------------------- yes
+
+"gcc -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/readline -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe   -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <stdio.h>
+ 4: #include <readline/readline.h>
+ 5: #include <readline/history.h>
+ 6: 
+ 7: /*top*/
+ 8: int main() {return 0;}
+ 9: extern int t(void);
+10: int t(void) { const volatile void *volatile p; p = &(&rl_basic_word_break_characters)[0]; return 0; }
+/* end */
+
+--------------------
+
+have_var: checking for rl_completer_word_break_characters in stdio.h,readline/readline.h,readline/history.h... -------------------- yes
+
+"gcc -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/readline -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe   -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <stdio.h>
+ 4: #include <readline/readline.h>
+ 5: #include <readline/history.h>
+ 6: 
+ 7: /*top*/
+ 8: int main() {return 0;}
+ 9: extern int t(void);
+10: int t(void) { const volatile void *volatile p; p = &(&rl_completer_word_break_characters)[0]; return 0; }
+/* end */
+
+--------------------
+
+have_var: checking for rl_basic_quote_characters in stdio.h,readline/readline.h,readline/history.h... -------------------- no
+
+"gcc -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/readline -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe   -c conftest.c"
+conftest.c: In function ‘t’:
+conftest.c:10: error: ‘rl_basic_quote_characters’ undeclared (first use in this function)
+conftest.c:10: error: (Each undeclared identifier is reported only once
+conftest.c:10: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <stdio.h>
+ 4: #include <readline/readline.h>
+ 5: #include <readline/history.h>
+ 6: 
+ 7: /*top*/
+ 8: int main() {return 0;}
+ 9: extern int t(void);
+10: int t(void) { const volatile void *volatile p; p = &(&rl_basic_quote_characters)[0]; return 0; }
+/* end */
+
+--------------------
+
+have_var: checking for rl_completer_quote_characters in stdio.h,readline/readline.h,readline/history.h... -------------------- yes
+
+"gcc -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/readline -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe   -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <stdio.h>
+ 4: #include <readline/readline.h>
+ 5: #include <readline/history.h>
+ 6: 
+ 7: /*top*/
+ 8: int main() {return 0;}
+ 9: extern int t(void);
+10: int t(void) { const volatile void *volatile p; p = &(&rl_completer_quote_characters)[0]; return 0; }
+/* end */
+
+--------------------
+
+have_var: checking for rl_filename_quote_characters in stdio.h,readline/readline.h,readline/history.h... -------------------- no
+
+"gcc -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/readline -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe   -c conftest.c"
+conftest.c: In function ‘t’:
+conftest.c:10: error: ‘rl_filename_quote_characters’ undeclared (first use in this function)
+conftest.c:10: error: (Each undeclared identifier is reported only once
+conftest.c:10: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <stdio.h>
+ 4: #include <readline/readline.h>
+ 5: #include <readline/history.h>
+ 6: 
+ 7: /*top*/
+ 8: int main() {return 0;}
+ 9: extern int t(void);
+10: int t(void) { const volatile void *volatile p; p = &(&rl_filename_quote_characters)[0]; return 0; }
+/* end */
+
+--------------------
+
+have_var: checking for rl_attempted_completion_over in stdio.h,readline/readline.h,readline/history.h... -------------------- yes
+
+"gcc -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/readline -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe   -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <stdio.h>
+ 4: #include <readline/readline.h>
+ 5: #include <readline/history.h>
+ 6: 
+ 7: /*top*/
+ 8: int main() {return 0;}
+ 9: extern int t(void);
+10: int t(void) { const volatile void *volatile p; p = &(&rl_attempted_completion_over)[0]; return 0; }
+/* end */
+
+--------------------
+
+have_var: checking for rl_library_version in stdio.h,readline/readline.h,readline/history.h... -------------------- yes
+
+"gcc -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/readline -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe   -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <stdio.h>
+ 4: #include <readline/readline.h>
+ 5: #include <readline/history.h>
+ 6: 
+ 7: /*top*/
+ 8: int main() {return 0;}
+ 9: extern int t(void);
+10: int t(void) { const volatile void *volatile p; p = &(&rl_library_version)[0]; return 0; }
+/* end */
+
+--------------------
+
+have_var: checking for rl_editing_mode in stdio.h,readline/readline.h,readline/history.h... -------------------- no
+
+"gcc -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/readline -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe   -c conftest.c"
+conftest.c: In function ‘t’:
+conftest.c:10: error: ‘rl_editing_mode’ undeclared (first use in this function)
+conftest.c:10: error: (Each undeclared identifier is reported only once
+conftest.c:10: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <stdio.h>
+ 4: #include <readline/readline.h>
+ 5: #include <readline/history.h>
+ 6: 
+ 7: /*top*/
+ 8: int main() {return 0;}
+ 9: extern int t(void);
+10: int t(void) { const volatile void *volatile p; p = &(&rl_editing_mode)[0]; return 0; }
+/* end */
+
+--------------------
+
+have_var: checking for rl_line_buffer in stdio.h,readline/readline.h,readline/history.h... -------------------- yes
+
+"gcc -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/readline -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe   -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <stdio.h>
+ 4: #include <readline/readline.h>
+ 5: #include <readline/history.h>
+ 6: 
+ 7: /*top*/
+ 8: int main() {return 0;}
+ 9: extern int t(void);
+10: int t(void) { const volatile void *volatile p; p = &(&rl_line_buffer)[0]; return 0; }
+/* end */
+
+--------------------
+
+have_var: checking for rl_point in stdio.h,readline/readline.h,readline/history.h... -------------------- yes
+
+"gcc -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/readline -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe   -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <stdio.h>
+ 4: #include <readline/readline.h>
+ 5: #include <readline/history.h>
+ 6: 
+ 7: /*top*/
+ 8: int main() {return 0;}
+ 9: extern int t(void);
+10: int t(void) { const volatile void *volatile p; p = &(&rl_point)[0]; return 0; }
+/* end */
+
+--------------------
+
+have_var: checking for rl_event_hook in stdio.h,readline/readline.h,readline/history.h... -------------------- no
+
+"gcc -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/readline -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe   -c conftest.c"
+conftest.c: In function ‘t’:
+conftest.c:10: error: ‘rl_event_hook’ undeclared (first use in this function)
+conftest.c:10: error: (Each undeclared identifier is reported only once
+conftest.c:10: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <stdio.h>
+ 4: #include <readline/readline.h>
+ 5: #include <readline/history.h>
+ 6: 
+ 7: /*top*/
+ 8: int main() {return 0;}
+ 9: extern int t(void);
+10: int t(void) { const volatile void *volatile p; p = &(&rl_event_hook)[0]; return 0; }
+/* end */
+
+--------------------
+
+have_var: checking for rl_catch_sigwinch in stdio.h,readline/readline.h,readline/history.h... -------------------- no
+
+"gcc -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/readline -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe   -c conftest.c"
+conftest.c: In function ‘t’:
+conftest.c:10: error: ‘rl_catch_sigwinch’ undeclared (first use in this function)
+conftest.c:10: error: (Each undeclared identifier is reported only once
+conftest.c:10: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <stdio.h>
+ 4: #include <readline/readline.h>
+ 5: #include <readline/history.h>
+ 6: 
+ 7: /*top*/
+ 8: int main() {return 0;}
+ 9: extern int t(void);
+10: int t(void) { const volatile void *volatile p; p = &(&rl_catch_sigwinch)[0]; return 0; }
+/* end */
+
+--------------------
+
+have_var: checking for rl_catch_signals in stdio.h,readline/readline.h,readline/history.h... -------------------- no
+
+"gcc -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/readline -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe   -c conftest.c"
+conftest.c: In function ‘t’:
+conftest.c:10: error: ‘rl_catch_signals’ undeclared (first use in this function)
+conftest.c:10: error: (Each undeclared identifier is reported only once
+conftest.c:10: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <stdio.h>
+ 4: #include <readline/readline.h>
+ 5: #include <readline/history.h>
+ 6: 
+ 7: /*top*/
+ 8: int main() {return 0;}
+ 9: extern int t(void);
+10: int t(void) { const volatile void *volatile p; p = &(&rl_catch_signals)[0]; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rl_cleanup_after_signal() in stdio.h,readline/readline.h,readline/history.h... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/readline -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe conftest.c  -L. -L../.. -L. -L'/Users/tim/.rbenv/versions/1.9.3-libbug/lib'  -L/usr/local/lib    -lreadline -lncurses  -lruby-static -lreadline -lncurses  -lpthread -ldl -lobjc "
+ld: warning: directory not found for option '-L/Users/tim/.rbenv/versions/1.9.3-libbug/lib'
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <stdio.h>
+ 4: #include <readline/readline.h>
+ 5: #include <readline/history.h>
+ 6: 
+ 7: /*top*/
+ 8: int main() {return 0;}
+ 9: extern int t(void);
+10: int t(void) { void ((*volatile p)()); p = (void ((*)()))rl_cleanup_after_signal; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rl_free_line_state() in stdio.h,readline/readline.h,readline/history.h... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/readline -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe conftest.c  -L. -L../.. -L. -L'/Users/tim/.rbenv/versions/1.9.3-libbug/lib'  -L/usr/local/lib    -lreadline -lncurses  -lruby-static -lreadline -lncurses  -lpthread -ldl -lobjc "
+ld: warning: directory not found for option '-L/Users/tim/.rbenv/versions/1.9.3-libbug/lib'
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <stdio.h>
+ 4: #include <readline/readline.h>
+ 5: #include <readline/history.h>
+ 6: 
+ 7: /*top*/
+ 8: int main() {return 0;}
+ 9: extern int t(void);
+10: int t(void) { void ((*volatile p)()); p = (void ((*)()))rl_free_line_state; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rl_clear_signals() in stdio.h,readline/readline.h,readline/history.h... -------------------- no
+
+"gcc -o conftest -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/readline -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe conftest.c  -L. -L../.. -L. -L'/Users/tim/.rbenv/versions/1.9.3-libbug/lib'  -L/usr/local/lib    -lreadline -lncurses  -lruby-static -lreadline -lncurses  -lpthread -ldl -lobjc "
+conftest.c: In function ‘t’:
+conftest.c:10: error: ‘rl_clear_signals’ undeclared (first use in this function)
+conftest.c:10: error: (Each undeclared identifier is reported only once
+conftest.c:10: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <stdio.h>
+ 4: #include <readline/readline.h>
+ 5: #include <readline/history.h>
+ 6: 
+ 7: /*top*/
+ 8: int main() {return 0;}
+ 9: extern int t(void);
+10: int t(void) { void ((*volatile p)()); p = (void ((*)()))rl_clear_signals; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/readline -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe conftest.c  -L. -L../.. -L. -L'/Users/tim/.rbenv/versions/1.9.3-libbug/lib'  -L/usr/local/lib    -lreadline -lncurses  -lruby-static -lreadline -lncurses  -lpthread -ldl -lobjc "
+conftest.c: In function ‘t’:
+conftest.c:10: warning: implicit declaration of function ‘rl_clear_signals’
+ld: warning: directory not found for option '-L/Users/tim/.rbenv/versions/1.9.3-libbug/lib'
+Undefined symbols for architecture x86_64:
+  "_rl_clear_signals", referenced from:
+      _t in ccno2Axw.o
+ld: symbol(s) not found for architecture x86_64
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <stdio.h>
+ 4: #include <readline/readline.h>
+ 5: #include <readline/history.h>
+ 6: 
+ 7: /*top*/
+ 8: int main() {return 0;}
+ 9: extern int t(void);
+10: int t(void) { rl_clear_signals(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rl_set_screen_size() in stdio.h,readline/readline.h,readline/history.h... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/readline -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe conftest.c  -L. -L../.. -L. -L'/Users/tim/.rbenv/versions/1.9.3-libbug/lib'  -L/usr/local/lib    -lreadline -lncurses  -lruby-static -lreadline -lncurses  -lpthread -ldl -lobjc "
+ld: warning: directory not found for option '-L/Users/tim/.rbenv/versions/1.9.3-libbug/lib'
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <stdio.h>
+ 4: #include <readline/readline.h>
+ 5: #include <readline/history.h>
+ 6: 
+ 7: /*top*/
+ 8: int main() {return 0;}
+ 9: extern int t(void);
+10: int t(void) { void ((*volatile p)()); p = (void ((*)()))rl_set_screen_size; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rl_get_screen_size() in stdio.h,readline/readline.h,readline/history.h... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/readline -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe conftest.c  -L. -L../.. -L. -L'/Users/tim/.rbenv/versions/1.9.3-libbug/lib'  -L/usr/local/lib    -lreadline -lncurses  -lruby-static -lreadline -lncurses  -lpthread -ldl -lobjc "
+ld: warning: directory not found for option '-L/Users/tim/.rbenv/versions/1.9.3-libbug/lib'
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <stdio.h>
+ 4: #include <readline/readline.h>
+ 5: #include <readline/history.h>
+ 6: 
+ 7: /*top*/
+ 8: int main() {return 0;}
+ 9: extern int t(void);
+10: int t(void) { void ((*volatile p)()); p = (void ((*)()))rl_get_screen_size; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rl_vi_editing_mode() in stdio.h,readline/readline.h,readline/history.h... -------------------- no
+
+"gcc -o conftest -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/readline -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe conftest.c  -L. -L../.. -L. -L'/Users/tim/.rbenv/versions/1.9.3-libbug/lib'  -L/usr/local/lib    -lreadline -lncurses  -lruby-static -lreadline -lncurses  -lpthread -ldl -lobjc "
+conftest.c: In function ‘t’:
+conftest.c:10: error: ‘rl_vi_editing_mode’ undeclared (first use in this function)
+conftest.c:10: error: (Each undeclared identifier is reported only once
+conftest.c:10: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <stdio.h>
+ 4: #include <readline/readline.h>
+ 5: #include <readline/history.h>
+ 6: 
+ 7: /*top*/
+ 8: int main() {return 0;}
+ 9: extern int t(void);
+10: int t(void) { void ((*volatile p)()); p = (void ((*)()))rl_vi_editing_mode; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/readline -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe conftest.c  -L. -L../.. -L. -L'/Users/tim/.rbenv/versions/1.9.3-libbug/lib'  -L/usr/local/lib    -lreadline -lncurses  -lruby-static -lreadline -lncurses  -lpthread -ldl -lobjc "
+conftest.c: In function ‘t’:
+conftest.c:10: warning: implicit declaration of function ‘rl_vi_editing_mode’
+ld: warning: directory not found for option '-L/Users/tim/.rbenv/versions/1.9.3-libbug/lib'
+Undefined symbols for architecture x86_64:
+  "_rl_vi_editing_mode", referenced from:
+      _t in ccgjW1rM.o
+ld: symbol(s) not found for architecture x86_64
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <stdio.h>
+ 4: #include <readline/readline.h>
+ 5: #include <readline/history.h>
+ 6: 
+ 7: /*top*/
+ 8: int main() {return 0;}
+ 9: extern int t(void);
+10: int t(void) { rl_vi_editing_mode(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rl_emacs_editing_mode() in stdio.h,readline/readline.h,readline/history.h... -------------------- no
+
+"gcc -o conftest -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/readline -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe conftest.c  -L. -L../.. -L. -L'/Users/tim/.rbenv/versions/1.9.3-libbug/lib'  -L/usr/local/lib    -lreadline -lncurses  -lruby-static -lreadline -lncurses  -lpthread -ldl -lobjc "
+conftest.c: In function ‘t’:
+conftest.c:10: error: ‘rl_emacs_editing_mode’ undeclared (first use in this function)
+conftest.c:10: error: (Each undeclared identifier is reported only once
+conftest.c:10: error: for each function it appears in.)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <stdio.h>
+ 4: #include <readline/readline.h>
+ 5: #include <readline/history.h>
+ 6: 
+ 7: /*top*/
+ 8: int main() {return 0;}
+ 9: extern int t(void);
+10: int t(void) { void ((*volatile p)()); p = (void ((*)()))rl_emacs_editing_mode; return 0; }
+/* end */
+
+"gcc -o conftest -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/readline -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe conftest.c  -L. -L../.. -L. -L'/Users/tim/.rbenv/versions/1.9.3-libbug/lib'  -L/usr/local/lib    -lreadline -lncurses  -lruby-static -lreadline -lncurses  -lpthread -ldl -lobjc "
+conftest.c: In function ‘t’:
+conftest.c:10: warning: implicit declaration of function ‘rl_emacs_editing_mode’
+ld: warning: directory not found for option '-L/Users/tim/.rbenv/versions/1.9.3-libbug/lib'
+Undefined symbols for architecture x86_64:
+  "_rl_emacs_editing_mode", referenced from:
+      _t in ccUspYth.o
+ld: symbol(s) not found for architecture x86_64
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <stdio.h>
+ 4: #include <readline/readline.h>
+ 5: #include <readline/history.h>
+ 6: 
+ 7: /*top*/
+ 8: int main() {return 0;}
+ 9: extern int t(void);
+10: int t(void) { rl_emacs_editing_mode(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for replace_history_entry() in stdio.h,readline/readline.h,readline/history.h... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/readline -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe conftest.c  -L. -L../.. -L. -L'/Users/tim/.rbenv/versions/1.9.3-libbug/lib'  -L/usr/local/lib    -lreadline -lncurses  -lruby-static -lreadline -lncurses  -lpthread -ldl -lobjc "
+ld: warning: directory not found for option '-L/Users/tim/.rbenv/versions/1.9.3-libbug/lib'
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <stdio.h>
+ 4: #include <readline/readline.h>
+ 5: #include <readline/history.h>
+ 6: 
+ 7: /*top*/
+ 8: int main() {return 0;}
+ 9: extern int t(void);
+10: int t(void) { void ((*volatile p)()); p = (void ((*)()))replace_history_entry; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for remove_history() in stdio.h,readline/readline.h,readline/history.h... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/readline -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe conftest.c  -L. -L../.. -L. -L'/Users/tim/.rbenv/versions/1.9.3-libbug/lib'  -L/usr/local/lib    -lreadline -lncurses  -lruby-static -lreadline -lncurses  -lpthread -ldl -lobjc "
+ld: warning: directory not found for option '-L/Users/tim/.rbenv/versions/1.9.3-libbug/lib'
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <stdio.h>
+ 4: #include <readline/readline.h>
+ 5: #include <readline/history.h>
+ 6: 
+ 7: /*top*/
+ 8: int main() {return 0;}
+ 9: extern int t(void);
+10: int t(void) { void ((*volatile p)()); p = (void ((*)()))remove_history; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for clear_history() in stdio.h,readline/readline.h,readline/history.h... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/readline -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe conftest.c  -L. -L../.. -L. -L'/Users/tim/.rbenv/versions/1.9.3-libbug/lib'  -L/usr/local/lib    -lreadline -lncurses  -lruby-static -lreadline -lncurses  -lpthread -ldl -lobjc "
+ld: warning: directory not found for option '-L/Users/tim/.rbenv/versions/1.9.3-libbug/lib'
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <stdio.h>
+ 4: #include <readline/readline.h>
+ 5: #include <readline/history.h>
+ 6: 
+ 7: /*top*/
+ 8: int main() {return 0;}
+ 9: extern int t(void);
+10: int t(void) { void ((*volatile p)()); p = (void ((*)()))clear_history; return 0; }
+/* end */
+
+--------------------
+
+have_macro: checking for RL_PROMPT_START_IGNORE in stdio.h,readline/readline.h,readline/history.h... -------------------- yes
+
+"gcc -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/readline -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe   -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <stdio.h>
+ 4: #include <readline/readline.h>
+ 5: #include <readline/history.h>
+ 6: /*top*/
+ 7: #ifndef RL_PROMPT_START_IGNORE
+ 8: # error
+ 9: >>>>>> RL_PROMPT_START_IGNORE undefined <<<<<<
+10: #endif
+/* end */
+
+--------------------
+
+have_macro: checking for RL_PROMPT_END_IGNORE in stdio.h,readline/readline.h,readline/history.h... -------------------- yes
+
+"gcc -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/readline -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe   -c conftest.c"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <stdio.h>
+ 4: #include <readline/readline.h>
+ 5: #include <readline/history.h>
+ 6: /*top*/
+ 7: #ifndef RL_PROMPT_END_IGNORE
+ 8: # error
+ 9: >>>>>> RL_PROMPT_END_IGNORE undefined <<<<<<
+10: #endif
+/* end */
+
+--------------------
+
+extconf.h is:
+/* begin */
+ 1: #ifndef EXTCONF_H
+ 2: #define EXTCONF_H
+ 3: #define HAVE_READLINE_READLINE_H 1
+ 4: #define HAVE_READLINE_HISTORY_H 1
+ 5: #define HAVE_RL_GETC_FUNCTION 1
+ 6: #define HAVE_RL_FILENAME_COMPLETION_FUNCTION 1
+ 7: #define HAVE_RL_COMPLETION_MATCHES 1
+ 8: #define HAVE_RL_DEPREP_TERM_FUNCTION 1
+ 9: #define HAVE_RL_COMPLETION_APPEND_CHARACTER 1
+10: #define HAVE_RL_BASIC_WORD_BREAK_CHARACTERS 1
+11: #define HAVE_RL_COMPLETER_WORD_BREAK_CHARACTERS 1
+12: #define HAVE_RL_COMPLETER_QUOTE_CHARACTERS 1
+13: #define HAVE_RL_ATTEMPTED_COMPLETION_OVER 1
+14: #define HAVE_RL_LIBRARY_VERSION 1
+15: #define HAVE_RL_LINE_BUFFER 1
+16: #define HAVE_RL_POINT 1
+17: #define HAVE_RL_CLEANUP_AFTER_SIGNAL 1
+18: #define HAVE_RL_FREE_LINE_STATE 1
+19: #define HAVE_RL_SET_SCREEN_SIZE 1
+20: #define HAVE_RL_GET_SCREEN_SIZE 1
+21: #define HAVE_REPLACE_HISTORY_ENTRY 1
+22: #define HAVE_REMOVE_HISTORY 1
+23: #define HAVE_CLEAR_HISTORY 1
+24: #endif
+/* end */
+

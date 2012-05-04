@@ -1,0 +1,55 @@
+package configuration for openssl
+cflags: -I/opt/local/include  
+ldflags: -L/opt/local/lib
+libs: -lssl -lcrypto  
+
+have_library: checking for main() in -lcrypto... -------------------- yes
+
+"gcc -o conftest -I../../../.ext/include/x86_64-darwin11.3.0 -I../../.././include -I../../.././ext/digest/sha1 -I../../.././ext/digest/sha1/.. -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe -I/opt/local/include   conftest.c  -L. -L../../.. -L. -L'/Users/tim/.rbenv/versions/1.9.3-libbug/lib'  -L/usr/local/lib -L/opt/local/lib     -lssl -lcrypto   -lruby-static -lcrypto  -lssl -lcrypto   -lpthread -ldl -lobjc "
+ld: warning: directory not found for option '-L/Users/tim/.rbenv/versions/1.9.3-libbug/lib'
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: extern int t(void);
+6: int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+/* end */
+
+--------------------
+
+have_header: checking for openssl/sha.h... -------------------- yes
+
+"gcc -E -I../../../.ext/include/x86_64-darwin11.3.0 -I../../.././include -I../../.././ext/digest/sha1 -I../../.././ext/digest/sha1/.. -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe -I/opt/local/include    conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <openssl/sha.h>
+/* end */
+
+--------------------
+
+have_header: checking for sys/cdefs.h... -------------------- yes
+
+"gcc -E -I../../../.ext/include/x86_64-darwin11.3.0 -I../../.././include -I../../.././ext/digest/sha1 -I../../.././ext/digest/sha1/.. -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe -I/opt/local/include    conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <sys/cdefs.h>
+/* end */
+
+--------------------
+
+extconf.h is:
+/* begin */
+1: #ifndef EXTCONF_H
+2: #define EXTCONF_H
+3: #define HAVE_CONFIG_H 1
+4: #define HAVE_OPENSSL_SHA_H 1
+5: #define HAVE_SYS_CDEFS_H 1
+6: #endif
+/* end */
+

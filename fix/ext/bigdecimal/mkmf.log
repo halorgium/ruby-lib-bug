@@ -1,0 +1,43 @@
+have_func: checking for labs() in stdlib.h... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/bigdecimal -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe conftest.c  -L. -L../.. -L. -L'/Users/tim/.rbenv/versions/1.9.3-libbug/lib'  -L/usr/local/lib     -lruby-static  -lpthread -ldl -lobjc "
+ld: warning: directory not found for option '-L/Users/tim/.rbenv/versions/1.9.3-libbug/lib'
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <stdlib.h>
+4: 
+5: /*top*/
+6: int main() {return 0;}
+7: int t() { void ((*volatile p)()); p = (void ((*)()))labs; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for llabs() in stdlib.h... -------------------- yes
+
+"gcc -o conftest -I../../.ext/include/x86_64-darwin11.3.0 -I../.././include -I../.././ext/bigdecimal -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I'/Users/tim/.rbenv/versions/1.9.3-libbug/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -pipe conftest.c  -L. -L../.. -L. -L'/Users/tim/.rbenv/versions/1.9.3-libbug/lib'  -L/usr/local/lib     -lruby-static  -lpthread -ldl -lobjc "
+ld: warning: directory not found for option '-L/Users/tim/.rbenv/versions/1.9.3-libbug/lib'
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <stdlib.h>
+4: 
+5: /*top*/
+6: int main() {return 0;}
+7: int t() { void ((*volatile p)()); p = (void ((*)()))llabs; return 0; }
+/* end */
+
+--------------------
+
+extconf.h is:
+/* begin */
+1: #ifndef EXTCONF_H
+2: #define EXTCONF_H
+3: #define HAVE_LABS 1
+4: #define HAVE_LLABS 1
+5: #endif
+/* end */
+
